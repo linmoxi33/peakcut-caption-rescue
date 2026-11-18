@@ -1,0 +1,63 @@
+{
+  "ok": true,
+  "source": "examples/in/progressive.ass",
+  "input": {
+    "caption_events": 8,
+    "bad_time_events": 0,
+    "words": 4,
+    "cues": 2
+  },
+  "thresholds": {
+    "min_duration": 0.4,
+    "max_chars_per_second": 25.0,
+    "max_chars": 42
+  },
+  "cues": [
+    {
+      "index": 1,
+      "start": 0.0,
+      "end": 1.2,
+      "text": "MAKE IT",
+      "words": [
+        {
+          "text": "MAKE",
+          "start": 0.0,
+          "end": 1.2,
+          "x": 300.0
+        },
+        {
+          "text": "IT",
+          "start": 0.0,
+          "end": 1.2,
+          "x": 500.0
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "start": 1.2,
+      "end": 2.4,
+      "text": "COUNT NOW",
+      "words": [
+        {
+          "text": "COUNT",
+          "start": 1.2,
+          "end": 2.4,
+          "x": 340.0
+        },
+        {
+          "text": "NOW",
+          "start": 1.2,
+          "end": 2.4,
+          "x": 560.0
+        }
+      ]
+    }
+  ],
+  "defects": [],
+  "summary": {
+    "errors": 0,
+    "warnings": 0,
+    "defects": 0
+  }
+}

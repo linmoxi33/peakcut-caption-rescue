@@ -1,0 +1,23 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Cap,Anton,110,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,8,0,5,0,0,0,1
+Style: Hook,Anton,80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,0,0,5,0,0,0,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 3,0:00:00.00,0:00:02.40,Hook,,0,0,0,,{\an7\pos(0,0)\fad(160,0)\c&H123456&\p1}m 100 100 l 900 100 900 300 100 300{\p0}
+Dialogue: 2,0:00:00.00,0:00:00.60,Cap,,0,0,0,,{\an5\pos(300,880)\fs110\c&H00FFFF&\fscx94\fscy94\t(0,90,\fscx110\fscy110)}MAKE
+Dialogue: 1,0:00:00.60,0:00:01.20,Cap,,0,0,0,,{\an5\pos(300,880)\fs110\c&HFFFFFF&\fscx105\fscy105\t(0,90,\fscx100\fscy100)}MAKE
+Dialogue: 1,0:00:00.00,0:00:00.60,Cap,,0,0,0,,{\an5\pos(500,880)\fs110\c&HFFFFFF&}IT
+Dialogue: 2,0:00:00.60,0:00:01.20,Cap,,0,0,0,,{\an5\pos(500,880)\fs110\c&H00FFFF&\fscx94\fscy94\t(0,90,\fscx110\fscy110)}IT
+Dialogue: 2,0:00:01.20,0:00:01.80,Cap,,0,0,0,,{\an5\pos(340,880)\fs110\c&H00FFFF&\fscx94\fscy94\t(0,90,\fscx110\fscy110)}COUNT
+Dialogue: 1,0:00:01.80,0:00:02.40,Cap,,0,0,0,,{\an5\pos(340,880)\fs110\c&HFFFFFF&\fscx105\fscy105\t(0,90,\fscx100\fscy100)}COUNT
+Dialogue: 1,0:00:01.20,0:00:01.80,Cap,,0,0,0,,{\an5\pos(560,880)\fs110\c&HFFFFFF&}NOW
+Dialogue: 2,0:00:01.80,0:00:02.40,Cap,,0,0,0,,{\an5\pos(560,880)\fs110\c&H00FFFF&\fscx94\fscy94\t(0,90,\fscx110\fscy110)}NOW
