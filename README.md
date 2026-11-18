@@ -6,7 +6,7 @@ Upstream: https://github.com/haziqahmedqasmi/PeakCut
 
 ## 上游是什么，它缺什么
 
-[PeakCut](https://github.com/haziqahmedqasmi/PeakCut) (1k+ stars, MIT) turns long videos and live streams into captioned 9:16 clips. `studio/render.py` writes `<name>.mp4`, `<name>.jpg` and `<name>.ass` into the output directory ([render.py#L267-L268](https://github.com/haziqahmedqasmi/PeakCut/blob/HEAD/studio/render.py#L267)). The `.ass` is emitted word by word: for each word it appends a "waiting" event, an "active" event and an "already said" event, all carrying the same group time span and a per-word `\pos(x,y)` ([render.py#L200-L226](https://github.com/haziqahmedqasmi/PeakCut/blob/HEAD/studio/render.py#L200)). A group of N words therefore becomes up to 3N Dialogue events.
+[PeakCut](https://github.com/haziqahmedqasmi/PeakCut) (1k+ stars, MIT) turns long videos and live streams into captioned 9:16 clips. `studio/render.py` writes `<name>.mp4`, `<name>.jpg` and `<name>.ass` into the output directory ([render.py#L267-L268](https://github.com/haziqahmedqasmi/PeakCut/blob/HEAD/studio/render.py#L267)). The `.ass` is emitted word by word: for each word it appends a "waiting" event, an "active" event and an "already said" event, all carrying the same group time span and a per-word `\pos(x,y)` ([render.py#L212-L226](https://github.com/haziqahmedqasmi/PeakCut/blob/HEAD/studio/render.py#L212)). A group of N words therefore becomes up to 3N Dialogue events.
 
 Nothing in the repository exports `.srt`/`.vtt`, and there is no importer that turns those events back into lines: the only files that mention captions are the renderer and `tests/test_captions.py`. Caption defects are a repeated open complaint ([#32](https://github.com/haziqahmedqasmi/PeakCut/issues/32), [#17](https://github.com/haziqahmedqasmi/PeakCut/issues/17)), yet the artifacts users get are video-only.
 
@@ -65,7 +65,7 @@ Tests: `python3 -m unittest discover -s tests -v` — 13 tests, 7 behavioural (e
 
 ## 局限
 
-- Line grouping relies on PeakCut's invariant that words in one caption group share the same start/end span (see `render.py#L200-L226`). A hand-edited `.ass` that breaks the invariant falls back to one cue per span.
+- Line grouping relies on PeakCut's invariant that words in one caption group share the same start/end span (see `render.py#L212-L226`). A hand-edited `.ass` that breaks the invariant falls back to one cue per span.
 - Hook text and vector drawings are skipped by design; they are not spoken captions.
 - Reading-speed and line-length limits are configurable heuristics, not broadcast certification.
 - The sample is constructed to match the renderer's documented event pattern; no real user video/`.ass` is redistributed.
